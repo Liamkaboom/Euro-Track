@@ -44,7 +44,9 @@
             padding: 10px 20px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             z-index: 1000;
+            flex-wrap: wrap;
         }
 
         nav img {
@@ -66,6 +68,7 @@
             display: flex;
             gap: 20px;
             margin-left: 20px;
+            flex-wrap: wrap;
         }
 
         nav ul li a {
@@ -76,6 +79,7 @@
             transition: background 0.3s ease-in-out, transform 0.3s;
             border-radius: 8px;
             background: #0077b6;
+            display: inline-block;
         }
 
         nav ul li a:hover {
@@ -85,13 +89,29 @@
 
         #clock {
             color: white;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            padding: 10px 20px;
+            padding: 8px 16px;
             background: #222;
             border-radius: 8px;
             margin-left: auto;
-            margin-right: 40px;
+            margin-right: 20px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+            nav ul {
+                justify-content: center;
+                margin: 10px 0;
+            }
+            #clock {
+                margin: 10px 0;
+            }
         }
 
         footer {
@@ -119,7 +139,7 @@
     
 
     <section id="forecast">
-        <h2>Outlooks:</h2>
+        <h2>Outlooks</h2>
         <p>There are currently no outlooks valid.</p>
         <h3>Example Outlook:</h3>
     </section>
